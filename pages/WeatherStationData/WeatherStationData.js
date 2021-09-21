@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
 import axios from "axios";
-import { useState } from "react";
-import Gauge from "../../components/Gauge/Gauge";
+import React, { useEffect, useState } from "react";
 
+import Gauge from "../../components/Gauge/Gauge";
 import settings from "../../settings.json";
 
 const WeatherStationData = (props) => {

@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
+import { ScrollView, View, StyleSheet } from "react-native";
 import { DefaultTheme, Provider, Text } from "react-native-paper";
+
 import WeatherStationData from "./pages/WeatherStationData/WeatherStationData";
-import { ScrollView, RefreshControl, View, StyleSheet } from "react-native";
 const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
     surface: "#444",
     text: "#fff",
+    background: "dimgrey",
   },
 };
 
@@ -26,15 +28,15 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: theme.colors.background,
     flex: 1,
-    backgroundColor: "#666",
-  },
-  titleWrapper: {
-    marginTop: 80,
-    paddingHorizontal: 16,
   },
   largeTitle: {
     fontSize: 24,
     fontWeight: "bold",
+  },
+  titleWrapper: {
+    marginTop: 80,
+    paddingHorizontal: 16,
   },
 });
