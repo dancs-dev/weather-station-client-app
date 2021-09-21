@@ -1,0 +1,83 @@
+{
+    "weatherStationAPI": "http://192.168.0.101:2701",
+    "statuses": {
+        "good": {
+            "sensorStatusIconColour": "lightgreen",
+            "sensorStatusIconName": "emoticon-happy"
+        },
+        "ok": {
+            "sensorStatusIconColour": "orange",
+            "sensorStatusIconName": "emoticon-neutral"
+        },
+        "bad": {
+            "sensorStatusIconColour": "orangered",
+            "sensorStatusIconName": "emoticon-sad"
+        }
+    },
+    "sensors": {
+        "indoorTemperature": {
+            "apiType": "indoor_temperature",
+            "name": "Indoor temperature",
+            "unit": "°C",
+            "sensorIcon": "thermometer",
+            "bad": [15.0, 25.0],
+            "ok": [17.0, 23.0]
+        },
+        "outdoorTemperature": {
+            "apiType": "outdoor_temperature",
+            "name": "Outdoor temperature",
+            "unit": "°C",
+            "sensorIcon": "thermometer",
+            "bad": [3.0, 30.0],
+            "ok": [10.0, 25.0]
+        },
+        "humidity": {
+            "apiType": "humidity",
+            "name": "Humidity",
+            "unit": "%",
+            "sensorIcon": "water-percent",
+            "bad": [35.0, 75.0],
+            "ok": [45.0, 65.0]
+        },
+        "pressure": {
+            "apiType": "pressure",
+            "name": "Pressure",
+            "unit": " hPa",
+            "sensorIcon": "gauge",
+            "bad": [1000.0, 2000.0],
+            "ok": [1010.0, 2000.0]
+        },
+        "gasResistance": {
+            "apiType": "gas_resistance",
+            "name": "Gas Resistance",
+            "unit": " Ohms",
+            "sensorIcon": "gas-cylinder",
+            "bad": [20000.0, 200000.0],
+            "ok": [50000.0, 150000.0]
+        },
+        "co2": {
+            "apiType": "co2_equivalent",
+            "name": "CO2 Equivalent",
+            "unit": " ppm",
+            "sensorIcon": "molecule-co2",
+            "bad": [0.0, 1000.0],
+            "ok": [0.0, 700.0]
+        },
+        "iaq": {
+            "apiType": "static_iaq",
+            "name": "Static IAQ",
+            "unit": "",
+            "sensorIcon": "smog",
+            "bad": [0.0, 100.0],
+            "ok": [0.0, 50.0]
+        },
+        "iaqAccuracy": {
+            "apiType": "iaq_accuracy",
+            "name": "IAQ Accuracy",
+            "unit": "",
+            "sensorIcon": "microscope",
+            "bad": [0.0, 5.0],
+            "ok": [3.0, 5.0]
+        }
+    }
+}
