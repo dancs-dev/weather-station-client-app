@@ -1,26 +1,28 @@
 {
   "expo": {
-    "name": "weather-station-client",
-    "slug": "weather-station-client",
+    "name": "ESP32 Weather Station",
+    "description": "A React Native application for viewing data from the ESP32 weather station project!",
+    "slug": "esp32-weather-station-client",
+    "privacy": "hidden",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "platforms": ["android"],
+    "githubUrl": "https://github.com/dancs-dev/weather-station-client-app",
+    "orientation": "default",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#696969"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": ["**/*"],
-    "ios": {
-      "supportsTablet": true
-    },
     "android": {
+      "package": "dev.dancs.esp32-weather-station-client",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#696969"
       }
     },
     "web": {
