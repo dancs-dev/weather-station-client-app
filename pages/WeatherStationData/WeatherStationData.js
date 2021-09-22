@@ -1,25 +1,11 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { PropTypes } from "prop-types";
+import React from "react";
 
 import Gauge from "../../components/Gauge/Gauge";
 import settings from "../../settings.json";
 
 const WeatherStationData = (props) => {
-  const [sensorData, setSensorData] = useState([]);
-
-  const getData = () => {
-    axios
-      .get(settings.weatherStationAPI + props.endPoint)
-      .then((response) => {
-        setSensorData(response.data);
-      })
-      .catch(setSensorData([]));
-  };
-
-  setInterval(() => {
-    getData();
-  }, 30000);
-  useEffect(() => getData(), []);
+  const sensorData = props.sensorData;
 
   const getSensorDatumValueByApiType = (type) => {
     for (let datum of sensorData) {
@@ -27,7 +13,7 @@ const WeatherStationData = (props) => {
         return datum.value;
       }
     }
-    throw "No sensor data of type " + type + " found.";
+    return `${type} unavailable`;
   };
 
   const getSensorDatumStatusByApiType = (bad, ok, value) => {
@@ -45,36 +31,42 @@ const WeatherStationData = (props) => {
     sensorSettings.push(value);
   }
 
-  const formattedSensorData =
-    sensorData == false
-      ? null
-      : sensorSettings.map((sensor, index) => (
-          <Gauge
-            key={index}
-            value={
-              (getSensorDatumValueByApiType(sensor.apiType) * 2).toFixed() / 2 +
-              sensor.unit
-            }
-            sensorName={sensor.name}
-            sensorTypeIconName={sensor.sensorIcon}
-            sensorStatusIconColour={
-              getSensorDatumStatusByApiType(
-                sensor.bad,
-                sensor.ok,
-                getSensorDatumValueByApiType(sensor.apiType)
-              ).sensorStatusIconColour
-            }
-            sensorStatusIconName={
-              getSensorDatumStatusByApiType(
-                sensor.bad,
-                sensor.ok,
-                getSensorDatumValueByApiType(sensor.apiType)
-              ).sensorStatusIconName
-            }
-          />
-        ));
+  if (sensorData) {
+    const formattedSensorData =
+      sensorData == false
+        ? null
+        : sensorSettings.map((sensor, index) => (
+            <Gauge
+              key={index}
+              value={
+                (getSensorDatumValueByApiType(sensor.apiType) * 2).toFixed() /
+                  2 +
+                sensor.unit
+              }
+              sensorName={sensor.name}
+              sensorTypeIconName={sensor.sensorIcon}
+              sensorStatusIconColour={
+                getSensorDatumStatusByApiType(
+                  sensor.bad,
+                  sensor.ok,
+                  getSensorDatumValueByApiType(sensor.apiType)
+                ).sensorStatusIconColour
+              }
+              sensorStatusIconName={
+                getSensorDatumStatusByApiType(
+                  sensor.bad,
+                  sensor.ok,
+                  getSensorDatumValueByApiType(sensor.apiType)
+                ).sensorStatusIconName
+              }
+            />
+          ));
+    return formattedSensorData;
+  }
+};
 
-  return formattedSensorData;
+WeatherStationData.propTypes = {
+  sensorData: PropTypes.array.isRequired,
 };
 
 export default WeatherStationData;
