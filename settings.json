@@ -1,5 +1,5 @@
 {
-  "weatherStationAPI": "http://192.168.0.101:2701",
+  "weatherStationAPI": "http://192.168.0.101",
   "statuses": {
     "good": {
       "sensorStatusIconColour": "lightgreen",
