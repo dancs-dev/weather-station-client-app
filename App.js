@@ -102,6 +102,7 @@ const styles = StyleSheet.create({
   },
   container: {
     backgroundColor: theme.colors.background,
+    flex: 1,
   },
   largeTitle: {
     fontSize: 24,
@@ -109,7 +110,7 @@ const styles = StyleSheet.create({
     paddingTop: 80,
   },
   main: {
-    flex: 1,
+    flexGrow: 1,
     marginHorizontal: 16,
   },
   weatherStationData: {
