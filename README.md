@@ -17,3 +17,8 @@ Configure `settings.json` as per your requirements.
 ### Running
 
 - Run the test client using `expo start` and follow the instructions from there to run on your device.
+
+### Demo
+
+<img src="demos/esp32-weather-station-app-demo-portrait.gif" alt="portrait" style="width:50%;"/>
+<img src="demos/esp32-weather-station-app-demo-landscape.gif" alt="landscape" style="width:50%;"/>
