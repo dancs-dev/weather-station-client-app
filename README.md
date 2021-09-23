@@ -21,4 +21,5 @@ Configure `settings.json` as per your requirements.
 ### Demo
 
 <img src="demos/esp32-weather-station-app-demo-portrait.gif" alt="portrait" style="width:50%;"/>
+<img src="demos/esp32-weather-station-app-demo.jpg" alt="portrait" style="width:50%;"/>
 <img src="demos/esp32-weather-station-app-demo-landscape.gif" alt="landscape" style="width:50%;"/>
